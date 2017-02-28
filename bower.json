@@ -1,0 +1,20 @@
+{
+  "name": "Insight",
+  "description": "show23d",
+  "main": "index.js",
+  "authors": [
+    "fav <f25457@qq.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Fav/Insight",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Office-Ribbon-2010": "https://github.com/OkGoDoIt/Office-Ribbon-2010.git"
+  }
+}

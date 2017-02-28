@@ -1,0 +1,27 @@
+{
+  "name": "Insight",
+  "version": "0.0.1",
+  "description": "show23d",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fav/Insight.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fav/Insight/issues"
+  },
+  "homepage": "https://github.com/Fav/Insight#readme",
+  "dependencies": {
+    "bower": "^1.8.0",
+    "requirejs": "^2.3.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13"
+  }
+}
