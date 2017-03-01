@@ -1,7 +1,7 @@
 define(function(){
 	return {
 		hello:function(){
-			alert("hello,requirejs");
+			console.log("hello,requirejs");
 		}
 	}
 })

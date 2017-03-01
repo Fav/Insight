@@ -3,9 +3,32 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<style>
+	html,body{
+		margin: 0;
+		padding: 0;
+	}
+	#map23dcontainer{
+		position: absolute;
+		top: 100px;
+		left: 0;
+		bottom: 0px;
+		right: 0;
+		background-color: yellow;
+	}
+	#map23d{
+		width: 100%;
+		height: 100%;
+		display: block;
+		/*line-height: 0;*/
+	}
+	</style>
 </head>
 <body>
 	<h1>hello world bower</h1>
+	<div id ="map23dcontainer">
+		<iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe>
+	</div>
 <script src="lib/requirejs/require.js" data-main="js/config.js"></script>
 </body>
 </html>
