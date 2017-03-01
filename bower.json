@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "Office-Ribbon-2010": "https://github.com/OkGoDoIt/Office-Ribbon-2010.git"
+    "Office-Ribbon-2010": "https://github.com/OkGoDoIt/Office-Ribbon-2010.git",
+    "requirejs": "^2.3.3"
   }
 }

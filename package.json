@@ -17,8 +17,7 @@
   },
   "homepage": "https://github.com/Fav/Insight#readme",
   "dependencies": {
-    "bower": "^1.8.0",
-    "requirejs": "^2.3.3"
+    "bower": "^1.8.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
