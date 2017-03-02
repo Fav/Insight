@@ -16,7 +16,9 @@
   ],
   "dependencies": {
     "Office-Ribbon-2010": "https://github.com/OkGoDoIt/Office-Ribbon-2010.git",
-    "requirejs": "^2.3.3",
-    "leaflet": "http://cdn.bootcss.com/leaflet/1.0.3/leaflet.js"
+    "requirejs": "^2.3.3"
+  },
+  "devDependencies": {
+    "jquery": "^3.1.1"
   }
 }
