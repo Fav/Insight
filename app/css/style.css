@@ -5,3 +5,6 @@
 	bottom: 0;
 	top: 0;
 }
+.leaflet-control-attribution .leaflet-control{
+	display: none;
+}

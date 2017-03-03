@@ -5,10 +5,16 @@
 	<title>2dmap</title>
 	<link rel="stylesheet" href="../lib/leaflet/leaflet.css">
 	<link rel="stylesheet" href="../css/style.css">
+	<style>
+	.leaflet-control-attribution{
+			display: none;
+		}
+	</style>
 </head>
 <body>
 	<div id="leafletContainer"></div>
 
-<script src="../lib/requirejs/require.js" data-main="../js/map/map2d" ></script>
+<script src="../lib/leaflet/leaflet.js"></script>
+<script src="../js/map/map2d.js"></script>
 </body>
 </html>

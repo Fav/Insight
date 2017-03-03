@@ -15,10 +15,10 @@
     "tests"
   ],
   "dependencies": {
-    "Office-Ribbon-2010": "https://github.com/OkGoDoIt/Office-Ribbon-2010.git",
-    "requirejs": "^2.3.3"
+    "bootstrap-submenu": "^2.0.4",
+    "jquery": "^3.1.1"
   },
   "devDependencies": {
-    "jquery": "^3.1.1"
+
   }
 }
