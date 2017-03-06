@@ -6,26 +6,9 @@
 	<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="lib/bootstrap/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="lib/bootstrap-submenu/dist/css/bootstrap-submenu.min.css">
-	<style>
-	html,body{
-		margin: 0;
-		padding: 0;
-	}
-	#map23dcontainer{
-		position: absolute;
-		top: 50px;
-		left: 0;
-		bottom: 0px;
-		right: 0;
-		z-index: 0;
-	}
-	#map23d{
-		width: 100%;
-		height: 100%;
-		display: block;
-		/*line-height: 0;*/
-	}
-	</style>
+	<link rel="stylesheet" href="lib/leaflet/leaflet.css">
+	<link rel="stylesheet" href="lib/Cesium/Widgets/widgets.css" />
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -35,7 +18,6 @@
 		    </div>
 		    <div>
 		        <ul class="nav navbar-nav">
-
 
 		        <li class="dropdown">
 			        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
@@ -109,12 +91,18 @@
 	    </div>
 	</nav>
 	<div id ="map23dcontainer">
-		<iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe>
+		<!-- <iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe> -->
+		<div id="m2dcontainer">
+			<div id="leafletContainer" ></div>
+		</div>
+		<div id="m3dcontainer">
+			<div id="cesiumContainer" ></div>
+		</div>
 	</div>
+
 <script src="lib/jquery/dist/jquery.min.js"></script>
 <script src="lib/bootstrap/bootstrap.min.js"></script>
 <script src="lib/bootstrap-submenu/dist/js/bootstrap-submenu.min.js"></script>
-<script src="js/config.js"></script>
-
+<script src="lib/requirejs/require.js" data-main="js/app"></script>
 </body>
 </html>
