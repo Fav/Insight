@@ -12,6 +12,33 @@ define(['leaflet'],function(leaflet){
 
 	}
 	
+	Map2d.prototype.setMouserEnter =function(fn){
+		setEvnet('mouseover', fn);
+	}
+	Map2d.prototype.setMouserOut =function(fn){
+		setEvnet('mouseout', fn);
+	}
+	Map2d.prototype.setMove =function(fn){
+		setEvnet('move', fn);
+	}
+	Map2d.prototype.getCenter=function(){
+		return map.getCenter();
+	}
+	Map2d.prototype.getZoom= function(){
+		return map.getZoom();
+	}
+	Map2d.prototype.getBounds= function(){
+		return map.getBounds();
+	}
+	Map2d.prototype.getCurHeight= function(){
+		var bound = map.getBounds();
+		return map.distance(bound._northEast,bound._southWest)*0.67201;//经验值
+	}
+	
+
+	function setEvnet(name,fn){
+		map.on(name, fn);
+	}
 	// L.marker([51.5, -0.09]).addTo(map)
 	//     .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
 	//     .openPopup();

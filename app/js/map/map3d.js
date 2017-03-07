@@ -2,6 +2,9 @@ define(['cesium'],function(cesium){
 	var viewer = null;
 	var canvas = null;
 	var handler= null;
+	var camera =null;
+	var scene = null;
+
 	function Map3d(ele){
 		viewer = new Cesium.Viewer(ele,{
 			animation:false,
@@ -18,12 +21,12 @@ define(['cesium'],function(cesium){
 		        url : 'https://a.tile.openstreetmap.org/'
 		    })
 		});
-
+		viewer._cesiumWidget._creditContainer.style.display = "none";
+		scene =viewer.scene;
+		camera = scene.camera;
 	};
 
 	Map3d.prototype.init=function(){
-		viewer._cesiumWidget._creditContainer.style.display = "none";
-		var camera = viewer.scene.camera;
 		var initPt = Cesium.Cartesian3.fromDegrees(114.305230,30.592747,10000);
 		camera.setView({
 			position:initPt
@@ -35,16 +38,26 @@ define(['cesium'],function(cesium){
 
 		canvas = viewer.canvas;
 		handler = new Cesium.ScreenSpaceEventHandler(canvas);
-		// viewer.screenSpaceEventHandler.setInputAction(MouseLeftClick,Cesium.ScreenSpaceEventType.LEFT_CLICK );
 	}
-	// var MouseLeftClick = function(){alert(1)}
 
-	Map3d.prototype.setMLC=function(fn){
+	Map3d.prototype.setLeftClick=function(fn){
 		handler.setInputAction(fn,Cesium.ScreenSpaceEventType.LEFT_CLICK);
 	}
 
+	Map3d.prototype.flyTo=function(point,height){
+		camera.flyTo({
+			destination:Cesium.Cartesian3.fromDegrees(point.lng,point.lat,height),
+			duration:0
+		});	
+	}
 
+	Map3d.prototype.setMove = function(){
 
+	}
+	
+	Map3d.prototype.getCurHeight = function(){
+		return viewer.camera.positionCartographic.height;
+	}
 
 	return Map3d;
 })
