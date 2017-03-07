@@ -12,6 +12,8 @@ require.config({
 require(['jquery','map2d','map3d'],function($,Map2d,Map3d){
 	var map3d = new Map3d('cesiumContainer');
 	map3d.init();
-
+	map3d.setMLC (function(click){
+		alert('MouseLeftClick');
+	});
 	var map2d = new Map2d('leafletContainer');
 })
