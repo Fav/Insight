@@ -35,9 +35,28 @@ define(['leaflet'], function(leaflet) {
         return map.distance(bound._northEast, bound._southWest) * 0.67201; //经验值
     }
 
-    Map2d.prototype.panTo = function(point, zoom) {
-        return map.panTo({ lon: point.x, lat: point.y });
+    Map2d.prototype.panTo = function(point) {
+        return map.panTo({ lon: point.x, lat: point.y }, { animate: false });
     }
+
+    Map2d.prototype.panToMax = function(point, zoom) {
+        if (!zoom) {
+            map.setZoom(map.getMaxZoom());
+        }
+        return map.panTo({ lon: point.x, lat: point.y }, { animate: false });
+    }
+
+    Map2d.prototype.flyToRect = function(rect) {
+        // define rectangle geographical bounds
+        var bounds = [
+            [rect.northeast.y, rect.northeast.x],
+            [rect.southwest.y, rect.southwest.x]
+        ];
+        map.fitBounds(bounds);
+    }
+
+
+
 
 
     function setEvnet(name, fn) {

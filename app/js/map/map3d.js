@@ -60,16 +60,24 @@ define(['cesium'], function(cesium) {
         camera.moving.addEventListener(fn);
     }
 
-    Map3d.prototype.getCenter = function(divPt = { x: 0, y: 0 }) {
-        var pt = new Cesium.Cartesian2(scene.drawingBufferWidth / 2 + divPt.x, scene.drawingBufferHeight / 2 + divPt.y);
-        var pick = viewer.scene.globe.pick(viewer.camera.getPickRay(pt), viewer.scene);
-        if (!pick) {
-            return { x: 0, y: 0, z: 0 };
+    Map3d.prototype.getCenter = function() {
+        return getLonLatFromWindow({
+            x: scene.drawingBufferWidth / 2,
+            y: scene.drawingBufferHeight / 2
+        });
+    }
+
+    Map3d.prototype.getCurExtent = function() {
+        return {
+            northeast: getLonLatFromWindow({
+                x: 0,
+                y: 0
+            }),
+            southwest: getLonLatFromWindow({
+                x: scene.drawingBufferWidth,
+                y: scene.drawingBufferHeight
+            })
         }
-        //将三维坐标转成地理坐标
-        var geoPt = viewer.scene.globe.ellipsoid.cartesianToCartographic(pick);
-        //地理坐标转换为经纬度坐标
-        return { x: geoPt.longitude / Math.PI * 180, y: geoPt.latitude / Math.PI * 180, z: getCurHeight() };
     }
 
     Map3d.prototype.getCurHeight = function() {
@@ -78,6 +86,18 @@ define(['cesium'], function(cesium) {
 
     function getCurHeight() {
         return viewer.camera.positionCartographic.height;
+    }
+
+    function getLonLatFromWindow(winpt) {
+        var pt = new Cesium.Cartesian2(winpt.x, winpt.y);
+        var pick = viewer.scene.globe.pick(viewer.camera.getPickRay(pt), viewer.scene);
+        if (!pick) {
+            return { x: 0, y: 0, z: 0 };
+        }
+        //将三维坐标转成地理坐标
+        var geoPt = viewer.scene.globe.ellipsoid.cartesianToCartographic(pick);
+        //地理坐标转换为经纬度坐标
+        return { x: geoPt.longitude / Math.PI * 180, y: geoPt.latitude / Math.PI * 180, z: getCurHeight() };
     }
 
     return Map3d;

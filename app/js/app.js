@@ -6,13 +6,14 @@ require.config({
         cesium: "lib/Cesium/Cesium",
         map2d: "js/map/map2d",
         map3d: "js/map/map3d",
-        config: 'js/config'
+        config: 'js/config',
+        util: "js/util"
     }
 })
 
 require([
-    'jquery', 'map2d', 'map3d', 'config'
-], function($, Map2d, Map3d, config) {
+    'jquery', 'map2d', 'map3d', 'config', 'util'
+], function($, Map2d, Map3d, config, util) {
     var map3d = new Map3d('cesiumContainer');
     map3d.init(config.homeposition);
 
@@ -50,12 +51,24 @@ require([
         if (is2dActive) {
             return;
         }
+
         var center3d = map3d.getCenter();
+        map2d.panTo(center3d);
+
+        /* 用三维球的显示范围，同步二维的显示范围，计算不准确，暂时不用
+        var rect3d = map3d.getCurExtent();
+
         //显示经纬度
         // $('#info3d').text("精度:" + center3d.x.toFixed(6) + " , 纬度:" + center3d.y.toFixed(6));
-
-        console.log(center3d);
-        map2d.panTo(center3d, 13);
+        //如果范围左上角右下角同时为0,就将二维定位到最高等级
+        var zero = { x: 0, y: 0, z: 0 };
+        if (util.comparePoint3(rect3d.northeast, zero) && util.comparePoint3(rect3d.southwest, zero)) {
+            var center3d = map3d.getCenter();
+            map2d.panToMax(center3d);
+        } else {
+            map2d.flyToRect(rect3d);
+        }
+        */
     })
 
 
