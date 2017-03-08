@@ -1,108 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="lib/bootstrap/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="lib/bootstrap-submenu/dist/css/bootstrap-submenu.min.css">
-	<link rel="stylesheet" href="lib/leaflet/leaflet.css">
-	<link rel="stylesheet" href="lib/Cesium/Widgets/widgets.css" />
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<nav class="navbar navbar-inverse" role="navigation">
-	    <div class="container-fluid">
-		    <div class="navbar-header">
-		        <a class="navbar-brand" href="#">二三维</a>
-		    </div>
-		    <div>
-		        <ul class="nav navbar-nav">
 
-		        <li class="dropdown">
-			        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="lib/bootstrap-submenu/dist/css/bootstrap-submenu.min.css">
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+    <link rel="stylesheet" href="lib/Cesium/Widgets/widgets.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">二三维</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a tabindex="0" data-toggle="dropdown" data-submenu="" aria-expanded="false">
 			          在线地图<span class="caret"></span>
 			        </a>
 
-			        <ul class="dropdown-menu">
-						<li><a tabindex="0">天地图</a></li>
-						<li class="divider"></li>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="0">天地图</a></li>
+                            <li class="divider"></li>
 
-						<li class="dropdown-submenu">
-						  <a tabindex="0">谷歌</a>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">谷歌</a>
 
-						  <ul class="dropdown-menu">
-							<li><a tabindex="0">谷歌影像</a></li>
-							<li><a tabindex="0">谷歌混合影像</a></li>
-							<li><a tabindex="0">谷歌地图</a></li>
-							<li><a tabindex="0">谷歌混合地图</a></li>
-							<li><a tabindex="0">谷歌深色地图</a></li>
-							<li><a tabindex="0">谷歌地形地图</a></li>
-						  </ul>
-						</li>
-						<li class="divider"></li>
-						<li class="dropdown-submenu">
-						  <a tabindex="0">Arcgis</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">谷歌影像</a></li>
+                                    <li><a tabindex="0">谷歌混合影像</a></li>
+                                    <li><a tabindex="0">谷歌地图</a></li>
+                                    <li><a tabindex="0">谷歌混合地图</a></li>
+                                    <li><a tabindex="0">谷歌深色地图</a></li>
+                                    <li><a tabindex="0">谷歌地形地图</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">Arcgis</a>
 
-						  <ul class="dropdown-menu">
-						    <li><a tabindex="0">Arcgis影像</a></li>
-							<li><a tabindex="0">Arcgis影像Esri</a></li>
-							<li><a tabindex="0">Arcgis地图</a></li>
-							<li><a tabindex="0">Arcgis深蓝地图</a></li>
-							<li><a tabindex="0">Arcgis英语地图</a></li>
-							<li><a tabindex="0">Arcgis中文地图</a></li>
-							<li><a tabindex="0">Arcgis街道地图</a></li>
-						  </ul>
-						</li>
-						<li class="divider"></li>						
-						<li class="dropdown-submenu">
-						  <a tabindex="0">高德</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">Arcgis影像</a></li>
+                                    <li><a tabindex="0">Arcgis影像Esri</a></li>
+                                    <li><a tabindex="0">Arcgis地图</a></li>
+                                    <li><a tabindex="0">Arcgis深蓝地图</a></li>
+                                    <li><a tabindex="0">Arcgis英语地图</a></li>
+                                    <li><a tabindex="0">Arcgis中文地图</a></li>
+                                    <li><a tabindex="0">Arcgis街道地图</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="0">高德</a>
 
-						  <ul class="dropdown-menu">
-						    <li><a tabindex="0">高德影像</a></li>
-							<li><a tabindex="0">高德地图</a></li>
-						  </ul>
-						</li>
-						<li class="divider"></li>	
-						<li><a tabindex="0">Openstreet地图</a></li>
-						<li class="divider"></li>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="0">高德影像</a></li>
+                                    <li><a tabindex="0">高德地图</a></li>
+                                </ul>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a tabindex="0">Openstreet地图</a></li>
+                            <li class="divider"></li>
 
-						<li><a tabindex="0">Mapbox影像</a></li>
-					</ul>
-			      </li>
+                            <li><a tabindex="0">Mapbox影像</a></li>
+                        </ul>
+                    </li>
 
 
-					<li class="dropdown">
-		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		                    窗口
 		                    <b class="caret"></b>
 		                </a>
-		                <ul class="dropdown-menu">
-		                    <li><a>小地图</a></li>
-		                    <li><a>导航面板</a></li>
-		                    <li><a>属性面板</a></li>
-		                    <li><a>视点复位</a></li>
-		                    <li><a>二维</a></li>
-		                    <li><a>三维</a></li>
-		                </ul>
-		            </li>
-		        </ul>
-		    </div>
-	    </div>
-	</nav>
-	<div id ="map23dcontainer">
-		<!-- <iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe> -->
-		<div id="m2dcontainer">
-			<div id="leafletContainer" ></div>
-		</div>
-		<div id="m3dcontainer">
-			<div id="cesiumContainer" ></div>
-		</div>
-	</div>
+                        <ul class="dropdown-menu">
+                            <li><a>小地图</a></li>
+                            <li><a>导航面板</a></li>
+                            <li><a>属性面板</a></li>
+                            <li><a>视点复位</a></li>
+                            <li><a>二维</a></li>
+                            <li><a>三维</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="map23dcontainer">
+        <!-- <iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe> -->
+        <div id="m2dcontainer">
+            <div id="leafletContainer"></div>
+            <label id="info2d"></label>
+        </div>
+        <div id="m3dcontainer">
+            <div id="cesiumContainer"></div>
+            <!--<label id="info3d"></label>-->
+        </div>
+    </div>
 
-<script src="lib/jquery/dist/jquery.min.js"></script>
-<script src="lib/bootstrap/bootstrap.min.js"></script>
-<script src="lib/bootstrap-submenu/dist/js/bootstrap-submenu.min.js"></script>
-<script src="lib/requirejs/require.js" data-main="js/app"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/bootstrap-submenu/dist/js/bootstrap-submenu.min.js"></script>
+    <script src="lib/requirejs/require.js" data-main="js/app"></script>
 </body>
+
 </html>
