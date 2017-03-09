@@ -7,13 +7,21 @@ require.config({
         map2d: "js/map/map2d",
         map3d: "js/map/map3d",
         config: 'js/config',
-        util: "js/util"
+        util: "js/util",
+        ribbon: "lib/dhtmlxRibbon/codebase/dhtmlxribbon"
+    },
+    shim: {
+        ribbon: {　 exports: 'ribbon' }
     }
 })
 
 require([
-    'jquery', 'map2d', 'map3d', 'config', 'util'
-], function($, Map2d, Map3d, config, util) {
+    'jquery', 'map2d', 'map3d', 'config', 'util', 'ribbon'
+], function($, Map2d, Map3d, config, util, ribbon) {
+    $(function() {
+        var myRibbon = new dhtmlXRibbon(config.menu);
+    });
+
     var map3d = new Map3d('cesiumContainer');
     map3d.init(config.homeposition);
 

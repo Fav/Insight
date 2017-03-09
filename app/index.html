@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="lib/bootstrap/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="lib/bootstrap-submenu/dist/css/bootstrap-submenu.min.css">
+    <!--<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">-->
     <link rel="stylesheet" href="lib/leaflet/leaflet.css">
     <link rel="stylesheet" href="lib/Cesium/Widgets/widgets.css" />
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="lib/dhtmlxRibbon/codebase/fonts/font_roboto/roboto.css" />
+    <link rel="stylesheet" type="text/css" href="lib/dhtmlxRibbon/codebase/dhtmlxribbon.css" />
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse" role="navigation">
+    <div id="ribbonObj"></div>
+    <!--<nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">二三维</a>
@@ -91,22 +92,24 @@
                 </ul>
             </div>
         </div>
-    </nav>
-    <div id="map23dcontainer">
-        <!-- <iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe> -->
-        <div id="m2dcontainer">
-            <div id="leafletContainer"></div>
-            <label id="info2d"></label>
-        </div>
-        <div id="m3dcontainer">
-            <div id="cesiumContainer"></div>
-            <!--<label id="info3d"></label>-->
+    </nav>-->
+
+    <div class="page">
+        <div id="map23dcontainer">
+            <!-- <iframe id = "map23d" src="map/map23d.html" frameborder="0"></iframe> -->
+            <div id="m2dcontainer">
+                <div id="leafletContainer"></div>
+                <label id="info2d"></label>
+            </div>
+            <div id="m3dcontainer">
+                <div id="cesiumContainer"></div>
+                <!--<label id="info3d"></label>-->
+            </div>
         </div>
     </div>
 
-    <script src="lib/jquery/dist/jquery.min.js"></script>
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
-    <script src="lib/bootstrap-submenu/dist/js/bootstrap-submenu.min.js"></script>
+    <!--<script src="lib/jquery/dist/jquery.min.js"></script>-->
+    </script>
     <script src="lib/requirejs/require.js" data-main="js/app"></script>
 </body>
 
